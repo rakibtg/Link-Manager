@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
+
 @Component({
-  selector: 'my-app',
-  template: '<h1>My First Angular App</h1>'
+  selector : 'linkZone-app',
+  template : `
+    <div>
+      <h1>{{ pageTitle }}</h1>
+      <pm-products></pm-products>
+    </div>
+  `
 })
-export class AppComponent { }
+
+export class AppComponent {
+  pageTitle : string = 'Links Manager'
+}
