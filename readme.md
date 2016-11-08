@@ -1,5 +1,3 @@
-#Angular 2 Starter
-To start an Angular 2 application clone this repository and run 
+#Link Manager
 
-`npm install`
-
+My personal link manager :p
