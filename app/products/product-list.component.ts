@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
 })
 
 export class ProductListComponent {
-
+    pageTitle : string = 'Saved Links';
+    links : any[] = [
+        {
+            'title' : 'start a discussion - prijm',
+            'link' : 'http://prijm.com'
+        },
+        {
+            'title' : 'Facebook',
+            'link' : 'http://facebook.com'
+        },
+        {
+            'title' : 'Google',
+            'link' : 'http://google.com'
+        }
+    ];
 }
