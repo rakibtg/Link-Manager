@@ -1,14 +1,21 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="">{{pageTitle}}</a> | <a href="">Hide Site Previews</a> | <input type="text" name="" id="" placeholder="Search ...">  
+        <a href="#" (click)="addYoutubeVideo()" class="btn btn-sm btn-success">Add YouTube Video</a>
+        <input [(ngModel)]='videoFilter' type="text" name="" class="form-control" style="display: inline-block; max-width: 200px;"
+            id="" placeholder="Search ...">
     </div>
+
+    <div *ngIf="videoFormState">
+        <video-form></video-form>
+    </div>
+
     <div class="panel-body">
         <div class="row">
             <div class="col-md-2">
                 Filter by:
             </div>
             <div class="col-md-4">
-                
+
             </div>
         </div>
         <div class="row">
@@ -21,24 +28,24 @@
 
 <div class="linksWrapper" *ngIf="links && links.length">
 
-  <div class="media">
+    <div class="media">
 
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor = "let link of links">
+        <ul class="list-group">
+            <li class="list-group-item videoItemLists" *ngFor="let link of links" (click)="playVideo( link )">
 
-      <div class="media-left">
-        <a href="{{ link.link }}" target="_blank" [title]="link.title">
-          <img class="media-object" src="http://free.pagepeeker.com/v2/thumbs.php?size=s&url={{ link.link }}" alt="...">
-        </a>
-      </div>
+                <div >
+                    <div class="media-left">
+                        <i class="fa fa-youtube-play" aria-hidden="true" style="font-size: 50px"></i>
+                    </div>
 
-      <div class="media-body" style="vertical-align: middle;">
-        <h4 class="media-heading" [title]="link.title"><a href="{{ link.link }}" target="_blank">{{ link.title }}</a></h4>
-        <span class="badge">{{ link.link }}</span>
-      </div>
+                    <div class="media-body" style="vertical-align: middle;">
+                        <h4 class="media-heading" [title]="link.title"><a href="{{ link.link }}" target="_blank">{{ link.title }}</a></h4>
+                        <small class="text-primary">{{ link.link }}</small>
+                    </div>
+                </div>
 
-      </li>
-    </ul>
+            </li>
+        </ul>
 
-  </div>
+    </div>
 </div>

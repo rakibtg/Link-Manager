@@ -12,3 +12,10 @@ h2, h3 {
 body {
   margin: 2em;
 }
+a:hover {
+  text-decoration: none !important;
+}
+
+li.videoItemLists:hover {
+    background-color: #ddd;
+}
