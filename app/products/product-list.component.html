@@ -20,7 +20,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Filtered by:</h3>
+                <h3>List Of Songs</h3>
             </div>
         </div>
     </div>
@@ -31,14 +31,21 @@
     <div class="media">
 
         <ul class="list-group">
-            <li class="list-group-item videoItemLists" *ngFor="let link of links" (click)="playVideo( link )">
+            <li class="list-group-item videoItemLists"
+                [class.activeVideoItem]="link == selectedItem" 
+                *ngFor="let link of links" 
+                (click)="playVideo( link )"
+            >
 
                 <div >
                     <div class="media-left">
                         <i class="fa fa-youtube-play" aria-hidden="true" style="font-size: 50px"></i>
                     </div>
 
-                    <div class="media-body" style="vertical-align: middle;">
+                    <div class="media-body" style="{{ cssStyle }}">
+                        <div>
+                            <star-rating></star-rating>
+                        </div>
                         <h4 class="media-heading" [title]="link.title"><a href="{{ link.link }}" target="_blank">{{ link.title }}</a></h4>
                         <small class="text-primary">{{ link.link }}</small>
                     </div>

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { VideoFormComponent } from './video-form/video-form.component';
 import { ProductListComponent } from './products/product-list.component';
+import { StarComponent } from './shared/star.component';
+
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -13,7 +15,8 @@ import { ProductListComponent } from './products/product-list.component';
     AppComponent,
     ProductListComponent,
     HeaderComponent,
-    VideoFormComponent
+    VideoFormComponent,
+    StarComponent
   ],
   bootstrap: [AppComponent]
 })

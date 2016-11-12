@@ -19,3 +19,7 @@ a:hover {
 li.videoItemLists:hover {
     background-color: #ddd;
 }
+
+.activeVideoItem {
+  background-color: #ccc !important;
+}
