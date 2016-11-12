@@ -1,28 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="#" (click)="addYoutubeVideo()" class="btn btn-sm btn-success">Add YouTube Video</a>
+        <a href="#" (click)="addYoutubeVideo( $event )" class="btn btn-sm btn-success">Add YouTube Video</a>
         <input [(ngModel)]='videoFilter' type="text" name="" class="form-control" style="display: inline-block; max-width: 200px;"
             id="" placeholder="Search ...">
     </div>
 
     <div *ngIf="videoFormState">
         <video-form></video-form>
-    </div>
-
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-2">
-                Filter by:
-            </div>
-            <div class="col-md-4">
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>List Of Songs</h3>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -34,7 +18,7 @@
             <li class="list-group-item videoItemLists"
                 [class.activeVideoItem]="link == selectedItem" 
                 *ngFor="let link of links" 
-                (click)="playVideo( link )"
+                (click)="playVideo( link, $event )"
             >
 
                 <div >
@@ -44,7 +28,7 @@
 
                     <div class="media-body" style="{{ cssStyle }}">
                         <div>
-                            <star-rating></star-rating>
+                            <star-rating [rating]="link.rating"></star-rating>
                         </div>
                         <h4 class="media-heading" [title]="link.title"><a href="{{ link.link }}" target="_blank">{{ link.title }}</a></h4>
                         <small class="text-primary">{{ link.link }}</small>

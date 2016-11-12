@@ -1,3 +1,7 @@
+body {
+  background: #e1e9f4 !important;
+}
+
 /* Master Styles */
 h1 {
   color: #369;
@@ -22,4 +26,9 @@ li.videoItemLists:hover {
 
 .activeVideoItem {
   background-color: #ccc !important;
+}
+
+.panel {
+  border: 0px !important;
+  border-radius: 3px !important;
 }

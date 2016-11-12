@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
     selector: 'star-rating',
@@ -7,7 +7,7 @@ import { Component, OnChanges } from '@angular/core';
 })
 
 export class StarComponent {
-    rating : number = 4;
+    @Input() rating : number;
     starWidth: number;
 
     ngOnChanges(): void {
