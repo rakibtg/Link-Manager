@@ -1,9 +1,23 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="#" (click)="addYoutubeVideo( $event )" class="btn btn-sm btn-success">Add YouTube Video</a>
-        <input [(ngModel)]='videoFilter' type="text" name="" class="form-control" style="display: inline-block; max-width: 200px;"
-            id="" placeholder="Search ...">
+
+        <a 
+            href="#" 
+            (click)="addYoutubeVideo( $event )" 
+            class="btn btn-sm btn-success">
+            Add YouTube Video
+        </a>
+
+        <input 
+            [(ngModel)]='videoFilter' 
+            type="text" name="" class="form-control" 
+            style="display: inline-block; max-width: 200px;"
+            id="" placeholder="Search ..."
+        >
+
     </div>
+
+    <div>{{ pageTitle }}</div>
 
     <div *ngIf="videoFormState">
         <video-form></video-form>
@@ -28,7 +42,10 @@
 
                     <div class="media-body" style="{{ cssStyle }}">
                         <div>
-                            <star-rating [rating]="link.rating"></star-rating>
+                            <star-rating 
+                                [rating]='link.rating'>
+                                (ratingClicked)='onRatingClicked($event)'
+                            </star-rating>
                         </div>
                         <h4 class="media-heading" [title]="link.title"><a href="{{ link.link }}" target="_blank">{{ link.title }}</a></h4>
                         <small class="text-primary">{{ link.link }}</small>

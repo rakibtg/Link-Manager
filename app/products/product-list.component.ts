@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
     selector: 'pm-products',
@@ -8,8 +9,9 @@ import { Component } from '@angular/core';
 export class ProductListComponent {
 
     pageTitle: string = 'Saved Links';
-    nowPlaying: string = '';
-    links: any[] = [
+    nowPlaying: string = 'amy lee';
+
+    links: IProduct[] = [
         {
             'title': 'All Of The Stars - Ed Sheeran',
             'link': 'https://www.youtube.com/watch?v=18lP9SYCt_E',
@@ -47,6 +49,7 @@ export class ProductListComponent {
             'rating' : 2
         }
     ];
+
     videoFilter: string = '';
     videoFormState: boolean = false;
     selectedItem = '';
@@ -61,8 +64,13 @@ export class ProductListComponent {
     }
 
     playVideo( link, event ): void {
-        event.preventDefault();
+        // event.preventDefault();
         this.selectedItem = link;
         console.log( link );
+    }
+
+    onRatingClicked( message: string ): void {
+        console.log( message );
+        this.pageTitle = 'Product List: ' + message;
     }
 }
